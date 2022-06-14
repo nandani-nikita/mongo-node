@@ -46,7 +46,7 @@ const register = async (req, res) => {
         }
 
         res.status(200).json({
-            msg: 'User Enrolled. Please Verify OTP.',
+            msg: `${user.msg} Please verify OTP`,
             userId: user.userId,
             name: user.name,
             email: user.email,

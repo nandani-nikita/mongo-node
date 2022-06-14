@@ -18,8 +18,11 @@ async function generateOtp() {
     }
     return otpData;
 }
-async function dummyFunction(email) {
+async function dummyFunctionEmailOtp(email) {
     return `Dummy function has sent otp on mail id: ${email} for password reset.`
+}
+async function dummyFunctionMobileOtp(mobile) {
+    return `Dummy function has sent otp on mobile number: ${mobile}.`
 }
 async function userRegisterService(body) {
     try {
@@ -38,6 +41,7 @@ async function userRegisterService(body) {
             });
             const saveData = await user.save();
             return {
+                msg: await dummyFunctionMobileOtp(body.mobile),
                 userId: saveData.userId,
                 name: saveData.name,
                 email: saveData.email,
@@ -168,7 +172,7 @@ async function userResetPasswordReq(body) {
             return { error: 'Email is not registered.' }
         }
 
-        const dummyData =await  dummyFunction(body.email);
+        const dummyData =await  dummyFunctionEmailOtp(body.email);
 
 
         return {
