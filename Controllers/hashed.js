@@ -13,7 +13,6 @@ module.exports.hashPassword = async (password, saltRounds = 10) => {
     return null;
 };
 
-
 module.exports.comparePassword = async (password, hash) => {
     try {
         const passwordCheck = await bcrypt.compare(password, hash);

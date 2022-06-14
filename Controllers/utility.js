@@ -12,19 +12,23 @@ const isValidMobile = function (mobile) {
     const regexp = /^\d{10}$/;
     return regexp.test(mobile);
 }
+
 const isValidOtp = function (otp) {
     const regexp = /^\d{6}$/;
     return regexp.test(otp);
 }
+
 const isValidPin = function (pin) {
     const regexp = /^\d{4}$/;
     return regexp.test(pin);
 }
+
 const isValidName = function (name) {
     const regexp = /^[ A-Za-z0-9]*$/;
 
     return regexp.test(name);
 }
+
 const isValidUuid = function (uuid) {
     const regexp = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/gi;
 
