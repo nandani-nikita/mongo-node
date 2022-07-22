@@ -1,14 +1,13 @@
 
 const mongoose = require('mongoose');
-const dotenv = require("dotenv");
-dotenv.config({ path: './config.env' })
 
-mongoose.connect('mongodb://localhost:27017/assignment', { useNewUrlparser: true }, (err) => {
+mongoose.connect('mongodb://127.0.0.1:27017/userAndTeam', { useNewUrlparser: true }, (err) => {
     if (!err) {
         console.log('Mongo Connection Successful.');
     } else {
-        console.log('Mongo Connection Failed');
+        console.log('Mongo Connection Failed',err);
     }
 });
 
 require('./userModel');
+require('./teamModel');
